@@ -14,7 +14,7 @@ app = Flask(__name__)
 @app.route('/')
 # ‘/’ URL is bound with hello_world() function.
 def hello_world():
-	response = jsonify([['Hello '],['Peter 🕷']])
+	response = jsonify([['Hello '],['Suraj 🕷']])
 	response.headers.add('Access-Control-Allow-Origin', '*')
 	return response
 
