@@ -2,6 +2,7 @@
 # An object of Flask class is our WSGI application.
 from flask import Flask
 from flask import request, jsonify
+import detect 
 
 # from detect import courseList
 # Flask constructor takes the name of
@@ -19,8 +20,8 @@ def hello_world():
 	return response
 
 @app.route('/<string:name>', methods=['GET'])
-def returnCourses(name):
-    response  = jsonify(name)
+def returnRecipe(name):
+    response  = jsonify(detect.generate_combinations(ingridient_word=name))
     response.headers.add('Access-Control-Allow-Origin', '*')
     return response
     
